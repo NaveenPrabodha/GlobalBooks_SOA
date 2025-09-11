@@ -71,6 +71,7 @@ async function connectRabbitMQ() {
 connectRabbitMQ();
 
 // REST Endpoints
+app.use('/orders', authenticateToken);
 
 // Create Order - POST /orders
 app.post('/orders', async (req, res) => {
@@ -248,7 +249,7 @@ app.post('/oauth/token', (req, res) => {
 });
 
 // Protected routes
-app.use('/orders', authenticateToken);
+
 
 // Start server
 app.listen(PORT, () => {

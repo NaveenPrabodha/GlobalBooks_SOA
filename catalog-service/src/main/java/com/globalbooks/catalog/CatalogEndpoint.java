@@ -50,10 +50,15 @@ public CatalogEndpoint() {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "GetBookRequest")
     @ResponsePayload
     public GetBookResponse getBook(@RequestPayload GetBookRequest request) {
+
+        System.out.println(">>> Received request for ISBN: [" + request.getIsbn() + "]");
+
         GetBookResponse response = new GetBookResponse();
         
         for (Book book : books) {
             if (book.getIsbn().equals(request.getIsbn())) {
+
+                 System.out.println(">>> Found book: " + book.getTitle());
                 response.setBook(book);
                 break;
             }
