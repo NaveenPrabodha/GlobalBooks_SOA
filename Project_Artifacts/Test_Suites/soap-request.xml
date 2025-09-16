@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cat="http://globalbooks.com/catalog">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cat:GetBookRequest>
+         <cat:isbn>978-0134685991</cat:isbn>
+      </cat:GetBookRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

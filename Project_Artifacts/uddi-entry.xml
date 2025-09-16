@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<businessEntity businessKey="uuid:globalbooks-12345"
+                xmlns="urn:uddi-org:api_v3">
+    
+    <name>GlobalBooks Inc.</name>
+    <description>Global e-commerce platform for books</description>
+    
+    <businessServices>
+        <businessService serviceKey="uuid:catalog-service-001"
+                        businessKey="uuid:globalbooks-12345">
+            <name>CatalogService</name>
+            <description>Book catalog lookup and search service (SOAP)</description>
+            
+            <bindingTemplates>
+                <bindingTemplate bindingKey="uuid:catalog-binding-001"
+                                serviceKey="uuid:catalog-service-001">
+                    <accessPoint useType="endPoint">
+                        http://api.globalbooks.com/ws/catalog
+                    </accessPoint>
+                    <tModelInstanceDetails>
+                        <tModelInstanceInfo tModelKey="urn:uddi-org:wsdl">
+                            <instanceDetails>
+                                <overviewDoc>
+                                    <overviewURL>
+                                        http://api.globalbooks.com/ws/catalog?wsdl
+                                    </overviewURL>
+                                </overviewDoc>
+                            </instanceDetails>
+                        </tModelInstanceInfo>
+                    </tModelInstanceDetails>
+                </bindingTemplate>
+            </bindingTemplates>
+        </businessService>
+        
+        <businessService serviceKey="uuid:orders-service-001"
+                        businessKey="uuid:globalbooks-12345">
+            <name>OrdersService</name>
+            <description>Order management service (REST)</description>
+            <bindingTemplates>
+                <bindingTemplate bindingKey="uuid:orders-binding-001"
+                                serviceKey="uuid:orders-service-001">
+                    <accessPoint useType="endPoint">
+                        http://api.globalbooks.com/api/orders
+                    </accessPoint>
+                </bindingTemplate>
+            </bindingTemplates>
+        </businessService>
+    </businessServices>
+</businessEntity>

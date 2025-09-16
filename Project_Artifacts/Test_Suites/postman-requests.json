@@ -1,0 +1,42 @@
+{
+  "info": "GlobalBooks Demo Requests",
+  "requests": [
+    {
+      "name": "Create New Order",
+      "method": "POST",
+      "url": "http://localhost:3000/orders",
+      "body": {
+        "mode": "raw",
+        "raw": {
+          "customerId": "CUST001",
+          "items": [{"isbn": "978-0134685991", "quantity": 1, "price": 45.99}],
+          "shippingAddress": {"street": "123 Main St", "city": "Boston", "country": "USA", "zipCode": "02101"}
+        }
+      }
+    },
+    {
+      "name": "Mark Order as Paid",
+      "method": "PATCH",
+      "url": "http://localhost:3000/orders/PASTE_ORDER_ID_HERE/status",
+      "body": {
+        "mode": "raw",
+        "raw": {
+          "status": "PAID"
+        }
+      }
+    },
+    {
+      "name": "Get OAuth2 Token (For Security Test)",
+      "method": "POST",
+      "url": "http://localhost:3000/oauth/token",
+      "body": {
+        "mode": "raw",
+        "raw": {
+          "client_id": "globalbooks-client",
+          "client_secret": "secret123",
+          "grant_type": "client_credentials"
+        }
+      }
+    }
+  ]
+}
